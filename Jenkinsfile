@@ -10,7 +10,7 @@ pipeline{
          stage("sonar qube quality check"){
             steps{
                 script{
-                withSonarQubeEnv(credentialsId: 'sonar') {
+                withSonarQubeEnv(credentialsId: 'sonr') {
                     sh 'mvn clean package sonar:sonar'
                 }
             }
