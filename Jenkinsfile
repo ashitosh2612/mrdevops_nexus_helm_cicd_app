@@ -9,7 +9,7 @@ pipeline{
         }
     }
 
-    stage('sonar qube quality check'){
+    stage("sonar qube quality check"){
         agent{
             docker {
                 image 'maven'
