@@ -8,5 +8,21 @@ pipeline{
             
         }
     }
+
+    stage('sonar qube quality check'){
+        agent{
+            docker {
+                image 'maven'
+            }
+        }
+        steps{
+            script{
+                withSonarQubeEnv(credentialsId: 'sonar') {
+                    sh 'mvn clean package sonar:sonar'
+                }
+            }
+        }
+
+    }
     
 }
